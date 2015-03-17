@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <title>Run Block Run</title>
+    <script src="js/phaser.js"></script>
+    <script src="js/boot.js"></script>
+    <script src="js/preloader.js"></script>
+    <script src="js/menu.js"></script>
+    <script src="js/game.js"></script>
+
+<style>
+body
+{
+    font-family: "Trebuchet MS", Helvetica, sans-serif;
+}
+#readme
+{
+    margin-top: 10px;
+}
+</style>
+
+</head>
+<body>
+<div id="game"></div>
+<div id="readme">
+<h2>Run Block Run</h2>
+<ul>
+
+<li><strong>High Concept:</strong>
+You are a block with a devastating secret. In order to avoid being found out, you must run away at full speed, avoiding all obstacles. Get to the finish line to keep your secret safe!
+</li>
+<br>
+<li><strong>Player Experience Goals:</strong>
+The experience should be fun but stressful.
+</li>
+<br>
+<li><strong>Genre:</strong>
+Casual games.
+</li>
+<br>
+<li><strong>Game play:</strong>
+The block starts moving immediately when you hit play. Hit the spacebar to jump. You can jump if you are either on the ground or you can double jump after 2.5 seconds.
+<br>
+System dynamics: You can't keep the block from running, you can only control his jumping.<br>
+Core mechanic: Jumping over obstacles.
+</li>
+<br>
+<li><strong>Prototype goal:</strong>
+This prototype evaluates quick jump reflexes.
+</li>
+<br>
+<li><strong>Features:</strong>
+You can't stop the character.
+</li>
+<br>
+<li><strong>Setting/Premise:</strong>
+You are a block with a devastating secret.
+</li>
+<br>
+<li><strong>Story:</strong>
+You need to keep your devastating secret a secret. Do this by running away from circumstances that might expose you! If you can get to the other side without being deterred by an obstacle, your secret will be safe!
+</li>
+<br>
+<li><strong>Target Audience:</strong>
+High-stake gamers (if you get halfway through and hit an obstacle, you go back to start - so the stakes get higher as you go along).
+</li>
+<br>
+<li><strong>Play time:</strong>
+5 minutes.
+</li>
+<br>
+<li><strong>Strategies:</strong>
+Look ahead while jumping/understand how long it takes before you can double jump.
+</li>
+<br>
+<li><strong>Prototype Assets:</strong>
+<br><br>The tilesheet and sprite are from the Platformer Art Deluxe pack, an uncopyrighted tileset that can be found here http://opengameart.org/content/platformer-art-deluxe
+<br><br>The background music is from incompetech, { "Show Your Moves" Kevin MacLeod (incompetech.com), Licensed under Creative Commons: By Attribution 3.0, http://creativecommons.org/licenses/by/3.0/ }
+<br><br>The jump sound is "jumping" by fins, CC-0 license (http://freesound.org/people/fins/)
+<br><br>The lose sound is "hit_002.wav" by leviclaassen, CC-3 license (http://freesound.org/people/leviclaassen/)
+<br><br>The win sound is "success.wav" by grunz, CC-3 license (http://freesound.org/people/grunz/sounds/109662/)
+
+</li>
+<br>
+<li><strong>Prototype Closest Other Game:</strong>
+I did not model this game or take the game framework from any existing game or Phaser example. I did use Phaser documentation and many examples for many small parts of the game, such as learning how to set keypad controls.
+</li>
+
+</ul>
+</div>
+
+<script type="text/javascript">
+    window.onload = function() 
+    {
+        var game = new Phaser.Game(800, 600, Phaser.AUTO, 'game');
+        
+        game.state.add('Boot', RunBlockRun.Boot);
+        game.state.add('Preloader', RunBlockRun.Preloader);
+        game.state.add('MainMenu', RunBlockRun.MainMenu);
+        game.state.add('Game', RunBlockRun.Game);
+        
+        game.state.start('Boot');
+    };
+</script>
+
+</body>
+</html>
